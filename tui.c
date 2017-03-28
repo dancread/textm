@@ -14,6 +14,7 @@ void tui_start(const char** strings, const int line_count, char* selection, int 
     for(i=0;i<line_count;i++){
         mvprintw(i+1, 1, "%s\n", strings[i]);
     }
+    mvprintw(i+1, 1, "%d %d", line_count, selection_max);
     while(run){
        mvchgat(selected_index, 1, -1, A_STANDOUT, 1, NULL); // Set highlighted row
        box(stdscr, 0, 0);// Create bordered window
